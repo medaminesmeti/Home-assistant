@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="@string/pref_connection_title">
+        <EditTextPreference
+            android:key="connection_external"
+            android:title="@string/pref_connection_url"
+            app:useSimpleSummaryProvider="true"/>
+        <io.homeassistant.companion.android.settings.ssid.SsidPreference
+            android:key="connection_internal_ssids"
+            android:title="@string/pref_connection_wifi"
+            android:dialogTitle="@string/manage_ssids"
+            android:positiveButtonText="@string/save"
+            android:negativeButtonText="@string/cancel"
+            app:summaryMaxLines="1"/>
+        <EditTextPreference
+            android:key="connection_internal"
+            android:title="@string/pref_connection_internal"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/device_registration">
+        <EditTextPreference
+            android:key="registration_name"
+            android:title="@string/device_name"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/location">
+        <SwitchPreference
+            android:key="location_zone"
+            android:icon="@drawable/map_marker_radius"
+            android:title="@string/pref_location_zone_title"
+            android:summary="@string/pref_location_zone_summary"/>
+        <SwitchPreference
+            android:key="location_background"
+            android:icon="@drawable/map_marker"
+            android:title="@string/pref_location_background_title"
+            android:summary="@string/pref_location_background_summary"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/other_settings">
+        <SwitchPreference
+            android:key="fullscreen"
+            android:icon="@drawable/ic_fullscreen"
+            android:title="@string/fullscreen"
+            android:summary="@string/fullscreen_def"/>
+        <SwitchPreference
+            android:key="app_lock"
+            android:icon="@drawable/ic_lock"
+            android:title="@string/lock_title"
+            android:summary="@string/lock_summary"/>
+        <EditTextPreference
+            android:key="session_timeout"
+            android:icon="@drawable/ic_timeout"
+            android:title="@string/session_timeout_title"
+            app:useSimpleSummaryProvider="true"/>
+        <Preference
+            android:key="shortcuts"
+            android:icon="@drawable/ic_plus"
+            android:title="@string/shortcuts"
+            android:summary="@string/shortcuts_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/app_version_info">
+        <Preference
+            android:key="version"
+            android:icon="@drawable/app_icon"
+            android:title="@string/application_version"
+            android:summary="1.0.0 (1)"/>
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>
